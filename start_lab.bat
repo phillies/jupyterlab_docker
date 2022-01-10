@@ -1,1 +1,1 @@
-docker run -it --rm -p 8888:8888 -v %HOMEPATH%/:/home/jovyan/work jupyter_def start.sh jupyter lab --LabApp.token=''
+docker run -it --rm -p 8888:8888 -v %HOMEPATH%/:/home/jovyan/work plies/jupyterlab start.sh jupyter lab --LabApp.token=''

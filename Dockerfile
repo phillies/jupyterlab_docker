@@ -13,3 +13,14 @@ RUN mamba install --yes --quiet torchvision torchaudio cpuonly -c pytorch && \
 
 # Darcula theme by default
 COPY overrides.json /opt/conda/share/jupyter/lab/settings/
+
+USER root
+
+RUN apt-get update && apt-get install -y libgl1 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+USER ${NB_UID}
+
+WORKDIR "${HOME}/work/"
+
+CMD ["start.sh", "jupyter", "lab", "--LabApp.token=''"]
