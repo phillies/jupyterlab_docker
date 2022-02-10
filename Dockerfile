@@ -13,3 +13,6 @@ RUN mamba install --yes --quiet torchvision torchaudio cpuonly -c pytorch && \
 
 # Darcula theme by default
 COPY overrides.json /opt/conda/share/jupyter/lab/settings/
+
+# start jupyter lab without security token
+CMD ["start.sh", "jupyter", "lab",  "--LabApp.token=''"]
