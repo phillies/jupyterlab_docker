@@ -1,1 +1,4 @@
-docker run -it --rm -p 8888:8888 -v %HOMEPATH%/:/home/jovyan/work jupyter_def start.sh jupyter lab --LabApp.token=''
+@ECHO OFF
+start chrome http://localhost:8888
+docker run -it --rm -p 8888:8888 -v c:\users\%USERNAME%:/home/jovyan/work plies/jupyterlab
+PAUSE
