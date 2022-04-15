@@ -7,6 +7,7 @@ LABEL maintainer="Phil Lies <phil@lies.io>"
 RUN mamba install --yes --quiet torchvision torchaudio cpuonly -c pytorch && \
     mamba install --yes --quiet -c conda-forge imageio matplotlib seaborn pandas scikit-image scikit-learn tqdm nodejs plotly ipywidgets widgetsnbextension ipympl scipy openpyxl theme-darcula && \
     pip install opencv-python albumentations pretrainedmodels efficientnet-pytorch torchsummary future absl-py hiddenlayer kaggle modelsummary lckr-jupyterlab-variableinspector jupyterlab-system-monitor && \
+    pip install xlsxwriter && \
     mamba clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
